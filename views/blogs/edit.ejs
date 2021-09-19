@@ -1,0 +1,39 @@
+<% layout('layout/boilderplate') %>
+<div class="row">
+    <h1 class="text-center">New Post</h1>
+    <div class="col-6 offset-3">
+        <form action="/blogs/<%= post._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="post[title]" value="<%= post.title %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="topic">Topic</label>
+                <select class="form-select" name="post[topic]" id="topic">
+                    <% for (let Thetopic of topics) { %> 
+                        <option value="<%= Thetopic %>" <%= post.topic === Thetopic ? "selected": "" %> ><%= Thetopic %></option>
+                    <% } %> 
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Essay">Essay</label>
+                <textarea class="form-control" type="text" id="Essay" name="post[essay]"
+                    required><%= post.essay %></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <a href="/blogs">Return</a>
+    </div>
+
+</div>

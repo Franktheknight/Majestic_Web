@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank's Majestic Web</title>
+    <link rel="shortcut icon" type="image/png" href="/pictures/favicon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56d12d2e05.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <%- include('../partials/navbar') %>
+        <main class="container mt-5">
+            <%- include('../partials/flash') %>
+                <%- body %>
+        </main>
+        <div class="chatbotset">
+            <div class="chatbotbtn">
+                <svg id="iconChat" width="55" height="55" viewBox="0 0 55 55" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="Chatbox">
+                        <circle id="Circle" cx="27.5" cy="27.5" r="27.5" fill="#F7FBE0" fill-opacity="0.5" />
+                        <path id="ChatIcon"
+                            d="M36 21H34V30H21V32C21 32.55 21.45 33 22 33H33L37 37V22C37 21.45 36.55 21 36 21ZM32 27V18C32 17.45 31.55 17 31 17H18C17.45 17 17 17.45 17 18V32L21 28H31C31.55 28 32 27.55 32 27Z"
+                            fill="#2D5E46" />
+                    </g>
+                </svg>
+            </div>
+            <div class="chatbotwindow" hidden>
+                <div class="chatbottitle">
+                    <div class="chatheader">
+                        <svg id="iconBot" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="BotIcon">
+                                <rect width="40" height="40" rx="20" fill="#94D76B" />
+                                <g id="Outside">
+                                    <rect id="inside" x="8" y="8" width="24" height="24" rx="12" fill="#94D76B" />
+                                    <path id="botVector"
+                                        d="M20 10C15.582 10 12 13.582 12 18V19V19.9023C11.4263 20.4494 11 21.1531 11 22C11 23.242 11.8576 24.1629 12.9434 24.6133C14.2444 27.7231 16.8502 30 20 30C23.1498 30 25.7556 27.7231 27.0566 24.6133C28.1424 24.1629 29 23.242 29 22C29 21.1531 28.5737 20.4494 28 19.9023V19V18C28 13.582 24.418 10 20 10ZM15 18H25C25.552 18 26 18.448 26 19V20V20.8516L26.502 21.1387C26.8056 21.313 27 21.615 27 22C27 22.5151 26.6312 22.9127 26.1387 22.9805L25.5527 23.0625L25.3398 23.6133C24.309 26.2995 22.2584 28 20 28C17.7416 28 15.691 26.2995 14.6602 23.6133L14.4473 23.0625L13.8613 22.9805C13.3688 22.9127 13 22.5151 13 22C13 21.615 13.1944 21.313 13.498 21.1387L14 20.8516V20V19C14 18.448 14.448 18 15 18Z"
+                                        fill="black" />
+                                </g>
+                            </g>
+                        </svg>
+                        <h5>Franky</h5>
+                    </div>
+                    <button type="button" id="uniqueBtn" class="btn-close" aria-label="Close"></button>
+                </div>
+                <div class="chatbotinterface">
+                </div>
+                <div class="userform">
+                    <form autocomplete="off">
+                        <input type="text" class="form-control botform" id="inputfromuser"
+                            placeholder="Ask me something">
+                    </form>
+                    <button type="button" class="btn btn-light" id="send">Send</button>
+                </div>
+            </div>
+        </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <script src='/javascripts/validateform.js'></script>
+            <script src="/javascripts/chatbot.js"></script>
+</body>
+
+</html>

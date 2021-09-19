@@ -1,0 +1,69 @@
+<% for(let topic of topics) {%> 
+    <% let postscategory = []; %>
+    <% for(let post of posts) { %>
+        <% if(post.title === topic) { %>
+            <% postscategory.push(post) %>
+        <% } %>
+    <% } %>
+    <% let slides1 = (postscategory.length/4) >> 0; %>
+    <% if (postscategory.length % 4 !== 0) slides1+=1; %>
+    <% let counter1 = 0; %>
+    <% let index1 = 0; %> 
+    <h3><%= topic %></h3>
+    <div id="carouselPosts" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <% for (let j = index1; j < counter1+4; j++) { %>
+                    <% if(j >= postscategory.length) break; %>
+                    <% if(postscategory[j].topic !== topic) { %>
+                        <% index1++; %>
+                        <% continue; %>
+                    <% } %>  
+                    <div class="card carouselcard">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= postscategory[j].title %></h5>
+                            <p class="card-text"><%= postscategory[j].date %></p>
+                            <p class="card-text"><%= postscategory[j].topic %></p>
+                            <a class="btn btn-primary" href="/blogs/<%= postscategory[j]._id %>">Details</a>
+                        </div>
+                    </div>
+                    <% index1++; %> 
+                    <% } %>
+                    <% counter1+=index;%> 
+                </div>
+            </div>
+            <% for (let i = 1; i < slides1; i++) { %> 
+            <div class="carousel-item">
+                <div class="row">
+                    <% for (let j = index1; j < counter1+4; j++) { %>
+                    <% if(j >= posts.length) break; %> 
+                    <% if(postscategory[j].topic !== topic) { %>
+                        <% index1++; %>
+                        <% continue; %>
+                    <% } %>    
+                    <div class="card carouselcard">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= postscategory[j].title %></h5>
+                            <p class="card-text"><%= postscategory[j].date %></p>
+                            <p class="card-text"><%= postscategory[j].topic %></p>
+                            <a class="btn btn-primary" href="/blogs/<%= postscategory[j]._id %>">Details</a>
+                        </div>
+                    </div>
+                    <% index1++; %> 
+                    <% } %>
+                    <% counter1+=index;%> 
+                </div>
+            </div>
+            <% } %> 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPosts" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPosts" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<% } %> 

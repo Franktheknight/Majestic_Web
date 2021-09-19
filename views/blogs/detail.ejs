@@ -1,0 +1,79 @@
+<% layout('layout/boilderplate') %>
+<h1>You are viewing a specific blog</h1>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-mg-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.date %></p>
+                <p class="card-text"><%= post.topic %></p>
+                <p class="card-text"><%= post.essay %></p>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <% if(isAdmin) { %> 
+        <a class="btn btn-info" href="/blogs/<%= post._id%>/edit ">Edit</a>
+        <form class="d-inline" action="/blogs/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+        <% } %> 
+        <a class="btn btn-primary" href="/blogs">Return</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Leave A Comment?
+        </button>
+    </div>
+   
+  
+  <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">New Comment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/blogs/<%= post._id %>/comment" method="POST" id="modalComment" novalidate class="validated-form">
+                    <div class="mb-3">
+                        <label class="form-label" for="author">Author</label>
+                        <input class="form-control" type="text" id="author" name="comment[author]" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="body">Body</label>
+                        <textarea class="form-control" type="text" id="body" name="comment[body]"
+                            required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<h5>Comments:</h5>
+<% for(let comment of post.comments) { %> 
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Author: <%= comment.author %></h5>
+            <p class="card-text">Date: <%= comment.date %></p>
+            <p class="card-text">Body: <%= comment.body %></p>
+            <% if(isAdmin) { %> 
+            <form action="/blogs/<%= post._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            <% } %> 
+        </div>
+    </div>
+<% } %> 

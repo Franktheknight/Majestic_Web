@@ -1,0 +1,424 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#iconChat {
+    cursor: pointer;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+}
+
+#iconBot {
+    margin-right: 10px;
+}
+
+
+#Circle{
+    fill: #F7FBE0;
+    transition: 0.5s;
+}
+
+#iconChat :hover #Circle {
+    fill: #add4a3
+}
+
+.chatbotwindow {
+    position: fixed;
+    z-index: 1;
+    height: 500px;
+    width: 400px;
+    background-color: #c4c9bb;
+    bottom: 5px;
+    right: 10px;
+    opacity: 0.95;
+    border-radius: 5px;
+}
+
+.chatbottitle {
+    height: 10%;
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #eaebf0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.chatheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chatbotinterface {
+    height: 72%;
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #6e7561;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.botinput {
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #c4c9bb;
+    border-radius: 25% 10%;
+}
+
+.userinput {
+    width: 50%;
+    height: auto;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #e0ebd0;
+    align-self: flex-end;
+    border-radius: 20% 10%;
+}
+
+.userform {
+    height: 10%;
+    width: 95%;
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+    background-color: #959c93;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.botform {
+    width: 300px;
+}
+
+#uniqueform {
+    width: 180px;
+}
+
+#ChatIcon{
+    fill: #2D5E46;
+}
+
+/* animations for svg start */
+#blades {
+    animation: windblades 6s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Cloud {
+    animation: clouds 46s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Cloud2 {
+    animation: clouds2 50s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Flag {
+    animation: flag 8s linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Sun {
+    animation: sun 10s infinite linear;
+}
+
+#signature path:nth-child(1){
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: franksign 2s ease forwards;
+}
+
+#signature path:nth-child(2){
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: franksign 2s ease forwards 0.5s;
+}
+#signature path:nth-child(3){
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: franksign 2s ease forwards 1s;
+}
+#signature path:nth-child(4){
+    stroke-dasharray: 107;
+    stroke-dashoffset: 107;
+    animation: franksign 2s ease forwards 1.5s;
+}
+#signature path:nth-child(5){
+    stroke-dasharray: 580;
+    stroke-dashoffset: 580;
+    animation: franksign 2s ease forwards 2s;
+}
+#signature path:nth-child(6){
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    animation: franksign 2s ease forwards 2.5s;
+}
+#signature path:nth-child(7){
+    stroke-dasharray: 58;
+    stroke-dashoffset: 58;
+    animation: franksign 2s ease forwards 3s;
+}
+#signature path:nth-child(8){
+    stroke-dasharray: 12;
+    stroke-dashoffset: 12;
+    animation: franksign 2s ease forwards 3.5s;
+}
+
+@keyframes windblades {
+    from{
+        transform: rotateZ(0deg);
+    }to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes clouds {
+    from{
+        transform: translateX(-200px)
+    }to {
+        transform: translateX(1000px);
+    }
+}
+
+@keyframes clouds2 {
+    from{
+        transform: translateX(-700px)
+    }to {
+        transform: translateX(400px);
+    }
+}
+
+@keyframes flag {
+    from{
+        transform: translateY(300%)
+    }to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes sun {
+    from{
+        fill: #E1E431;
+    } 50% {
+        fill: #e0bc77;
+    } to {
+        fill: #E1E431;
+    }
+}
+
+@keyframes franksign {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+.fancyanime svg{
+    box-shadow: 10px 10px 10px #89918d;
+}
+/* animations for svg end */
+
+.blogcarousel {
+    padding: 10px;
+    margin: 10px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 20px;
+    background-color: #0d1104;
+  }
+
+.carousel-item {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.carouselcard {
+    width: 18rem;
+    margin-left:25px;
+    background-color: #fcfcfc;
+}
+
+
+/* aboutpage section */
+.navbar {
+    padding: .8rem;
+}
+
+.navbar-nav li{
+    padding-right: 20px;
+}
+.nav-link {
+    font-size: 1.1em !important;
+}
+
+.btn-primary {
+    background-color: #87cefa;
+    border: 1px solid #87ceda;
+}
+.btn-primary:hover{
+    background-color: #90ee90;
+    border: 1px solid #90ee90;
+}
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #d9e1e2;
+}
+.padding {
+    padding-bottom: 2rem;
+}
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+.fa-js-square{
+    color: #e4e128;
+}
+.fa-java{
+    color: #91263d;
+}
+
+.fa-python{
+    color: #89918d;
+}
+
+.fa-js-square, .fa-java, .fa-python {
+    font-size: 4em;
+    margin: 1rem;
+}
+
+#education img {
+    width: 85%;
+    height: 85%;
+    border-radius: 8px;
+}
+
+
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+hr.light-100{
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem
+}
+
+/*---Media Queries --*/
+@media (max-width: 1366px) {
+    .card-title {
+        font-size: 1.3rem;
+    }
+    .carouselcard {
+        width: 13rem;
+        margin-left:12px;
+        font-size: 1rem;
+    }
+} 
+@media (max-width: 768px) {
+    
+.display-4 {
+    font-size: 200%;
+}
+.social a{
+    font-size: 2.5em;
+    padding: 1.2rem;
+}
+.card-title {
+    font-size: 1.2rem;
+}
+.carouselcard {
+    width: 10rem;
+    margin-left:8px;
+    font-size: 0.8rem;
+}
+
+}
+@media (max-width: 576px) {
+.display-4 {
+    font-size: 160%;
+}
+.social a{
+    font-size: 2em;
+    padding: .7rem;
+}
+
+.chatbotwindow {
+    height: 400px;
+    width: 300px;
+}
+.botform {
+    width: 225px;
+}
+}
+
+
+/*--- Fixed Background Image --*/
+figure{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    margin: 0!important;
+}
+
+.fixed-wrap{
+    clip:rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#fixed{
+    background-image: url('https://images.unsplash.com/photo-1542202229-7d93c33f5d07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*='col-'] {
+    padding: 1rem;
+}
+
+/* aboutpage section end */

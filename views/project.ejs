@@ -1,0 +1,51 @@
+<% layout('layout/boilderplate') %>
+<h1 class="text-center">My Past Projects</h1>
+<div class='container-fluid padding'>
+    <div class='row padding'>
+        <div class='col'>
+            <div class='card h-100'>
+                <img src="/pictures/NumberDisplay.jpg" class="card-img-top" alt="number display picture">
+                <div class='card-body'>
+                    <h4 class='card-title'>Number Display</h4>
+                    <p>This is a simple embedded system that is able to display a number of your choosing or the last digit of current bitcoin price</p>
+                    <a target="_blank" href="https://github.com/Franktheknight/Number-Display" target="_blank" class='btn btn-outline-secondary'>Aspin Website</a>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <img src="/pictures/blog.PNG" class="card-img-top" alt="...">
+                <div class='card-body'>
+                    <h4 class='card-title'>My Blog</h4>
+                    <p>This is my first real project after I learned python3. I built this blog using django and bootstrap.</p>
+                    <p>Even the website you are viewing, is the 2.0 version of that one. However, I am still proud of that one</p>
+                    <p>because it is the first real software engineering project I have done.</p>
+                    <a target="_blank" href="{% url 'blog-home' %}" class='btn btn-outline-secondary'>Frank's Blog</a>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <img src="/pictures/robot1.png" class="card-img-top" alt="...">
+                    <h4 class='card-title text-center'>Wall-E</h4>
+                    <p>This is the project, we did for IEEE 2021 Spring Quarterly Project</p>
+                    <p>This robot car is able to move forward, backward, turn and Honk.</p>
+                    <p>It uses IR sensor for communication.</p>
+                    <a target="_blank" href="https://github.com/Franktheknight/WALL-E" class='btn btn-outline-secondary'>Wall-E</a>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h4 class='card-title text-center'>Diary Distiller</h4>
+                    <p>This is the project, we did for IEEE 2020 Fall Quarterly Project(we won the third place!)</p>
+                    <p>We used django for the back-end and react for the front-end.</p>
+                    <p>We also used machine learning for matching user posts with other similar posts.</p>
+                    <a target="_blank" href="https://github.com/Franktheknight/QP-Team-10" class='btn btn-outline-secondary'>Wall-E</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
