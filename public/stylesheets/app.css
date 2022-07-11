@@ -1,5 +1,5 @@
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -338,50 +338,76 @@ hr.light-100{
 
 /*---Media Queries --*/
 @media (max-width: 1366px) {
+    body {
+        font-size: 20px;
+    }
     .card-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .carouselcard {
         width: 13rem;
         margin-left:12px;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 } 
 @media (max-width: 768px) {
     
-.display-4 {
-    font-size: 200%;
-}
-.social a{
-    font-size: 2.5em;
-    padding: 1.2rem;
-}
-.card-title {
-    font-size: 1.2rem;
-}
-.carouselcard {
-    width: 10rem;
-    margin-left:8px;
-    font-size: 0.8rem;
-}
+    body {
+        font-size: 15px;
+    }
+    .display-4 {
+        font-size: 200%;
+    }
+    .social a{
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
+    .carouselcard {
+        width: 10rem;
+        margin-left:8px;
+        font-size: 0.8rem;
+    }
 
 }
 @media (max-width: 576px) {
-.display-4 {
-    font-size: 160%;
-}
-.social a{
-    font-size: 2em;
-    padding: .7rem;
-}
+    body {
+        font-size: 12px;
+    }
+    .lead {
+        font-size: 0.9rem;
+    }
+    .display-4 {
+        font-size: 160%;
+    }
+    .social a{
+        font-size: 2em;
+        padding: .7rem;
+    }
 
-.chatbotwindow {
-    height: 400px;
-    width: 300px;
-}
-.botform {
-    width: 225px;
-}
+    .chatbotwindow {
+        height: 400px;
+        width: 300px;
+    }
+    .botform {
+        width: 225px;
+    }
+    .card-title {
+        font-size: 1.2rem;
+    }
+    .carouselcard {
+        width: 8rem;
+        margin-left:28px;
+        font-size: 0.7rem;
+    }
+    .card-title {
+        font-size: 0.8rem;
+    }
+    .carouselbtn {
+        font-size: 0.8rem;
+    }
 }
 
 

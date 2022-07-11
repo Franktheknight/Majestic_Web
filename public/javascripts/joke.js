@@ -15,7 +15,24 @@ const showjoke = async () => {
     joketag.appendChild(text);
 }
 
+
+const images = [
+    "../pictures/cloud.jpg",
+    "../pictures/trees.jpg",
+    "../pictures/castle.jpg",
+    "../pictures/mountain.jpg"
+]
+let imageIndex = 0;
+
+const changeBackground = () => {
+    const background = document.querySelector("body");
+    background.style.backgroundImage = ` url(${images[imageIndex++ % images.length]})`;
+    setTimeout(changeBackground, 10000);
+}
+
 showjoke();
+changeBackground();
+
 
 
 
