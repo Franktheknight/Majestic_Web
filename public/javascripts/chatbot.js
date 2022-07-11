@@ -10,12 +10,20 @@ let userchat;
 //decalre some messages and some regex
 let re1 = new RegExp(".*[fF]rank.*");
 let re2 = new RegExp(".*[aA]bout.*");
-let re3 = new RegExp(".*hello|hi|greeting|yo|whatup.*");
+let re3 = new RegExp(".*hello|hey|hi|greeting|yo|what.*up.*");
 let re4 = new RegExp(".*[pP]roject.*");
 let re5 = new RegExp(".*[sS]kill.*");
 let re6 = new RegExp(".*[hH]obb.*");
-let msg = "Welcome to Frank's Web, I hope you will enjoy your time visiting here and get to know who frank is in the end. I am still learning, type some key words like frank, about, project and so on.";
-let msg1 = "Sorry I don't understand, try to type some keywords and see if I have any match.";
+const msg = [
+    "Welcome to Frank's Web, I hope you will enjoy your time visiting here and get to know who frank is in the end. I am still learning, type some key words like frank, about, project and so on.",
+    "Hello there, I hope you are enjoying your visit here. You can ask me something like frank, about, project, skills, hobbies to get started.",
+    "Greetings, this is Franky. I am here to help introducing frank to you! Please feel free to ask something like, frank, project, hobbies ..."
+]
+const msge = [
+    "Sorry I don't understand, try to type some keywords and see if I have any match.",
+    "Tell you a secret, I am not an intelligent being ... try to ask this in another way to see if I have a match",
+    "Apologies, my friend. Try to ask again in another way and see if I can answer that."
+]
 
 document.addEventListener("keypress", function(event) {
     if(event.key === "Enter") {
@@ -27,7 +35,7 @@ document.addEventListener("keypress", function(event) {
 triggerBtn.onclick = function () {
     chatbtn.hidden = true;
     chatwindow.hidden = false;
-    chatMessage(msg, false);
+    chatMessage(msg[Math.floor(Math.random()*msg.length)], false);
 }
 
 switchBtn.onclick = function () {
@@ -61,7 +69,7 @@ sendBtn.onclick = function () {
         chatMessage("Frank, as a future engineer, has the basic skills of circuit analysis, software programming, CAD modeling and something else. If you are interested in contact him, feel free to email him at the address below.", false);
     } else if (re6.test(toCompare)) {
         chatMessage(userchat);
-        chatMessage("Well, he likes to play saxophone, especially Jazz. He is trully passionate about that music, there will be a music page in the near future! Beside that, he is just like a regular person doing regular people stuff.", false);
+        chatMessage("Well, he likes to play saxophone, especially Jazz. He is trully passionate about that music, there will be a music page in the near future! Besides that, he is just like a regular person doing regular people stuff.", false);
     } else if(toCompare === "login") {
         chatMessage("Welcome Frank, please enter the password to login", false);
         secretLogin();
@@ -72,7 +80,7 @@ sendBtn.onclick = function () {
         userinput.value = "";
     } else if (toCompare) {
         chatMessage(userchat);
-        chatMessage(msg1, false);
+        chatMessage(msge[Math.floor(Math.random()*msge.length)], false);
     }
 }
 

@@ -27,7 +27,7 @@ let imageIndex = 0;
 const changeBackground = () => {
     const background = document.querySelector("body");
     background.style.backgroundImage = ` url(${images[imageIndex++ % images.length]})`;
-    setTimeout(changeBackground, 7000);
+    setTimeout(changeBackground, 10000);
 }
 
 showjoke();
