@@ -23,7 +23,7 @@ const secret = process.env.SESSION;
 const flash = require("connect-flash");
 const MongoStore = require('connect-mongo');
 const admin = "Admin";
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/majestic-web";
+//const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/majestic-web";
 const catchAsync = func => {
     return (req, res, next) => {
         func(req, res, next).catch(next);
@@ -40,7 +40,7 @@ const returnTo = (req, res, next) => {
 //needs session to log me in, and there is only one user--Frank
 //anyone can leave a comments, no registration needed
 //Front-end is crucial here, learn svg animations
-// const dbUrl = "mongodb://localhost:27017/majestic-web"
+const dbUrl = "mongodb://localhost:27017/majestic-web"
 mongoose.connect(dbUrl)
 
 const db = mongoose.connection;
