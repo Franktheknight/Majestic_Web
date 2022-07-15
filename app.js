@@ -76,6 +76,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 app.use(session(sessionConfig));
 app.use(returnTo);
 app.use((req, res, next) => {

@@ -1,13 +1,12 @@
 <% layout('layout/boilderplate') %>
 <h1>Frank's Blog</h1>
 <div class="card mb-3">
+    <h5 class="card-header"><%= post.title %></h5>
+    <p class="card-header"><%= post.topic %> -- <%= post.date %></p>
     <div class="row">
         <div class="col-mg-8">
             <div class="card-body">
-                <h5 class="card-title"><%= post.title %></h5>
-                <p class="card-text"><%= post.date %></p>
-                <p class="card-text"><%= post.topic %></p>
-                <p class="card-text"><%= post.essay %></p>
+                <p class="card-text"><%- post.essay %></p>
             </div>
         </div>
     </div>
