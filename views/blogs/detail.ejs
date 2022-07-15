@@ -1,8 +1,7 @@
 <% layout('layout/boilderplate') %>
-<h1>Frank's Blog</h1>
+<h1><%= post.title %></h1>
 <div class="card mb-3">
-    <h5 class="card-header"><%= post.title %></h5>
-    <p class="card-header"><%= post.topic %> -- <%= post.date %></p>
+    <h5 class="card-header"><%= post.topic %> -- <%= post.date %></h5>
     <div class="row">
         <div class="col-mg-8">
             <div class="card-body">
